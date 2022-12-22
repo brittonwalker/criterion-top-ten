@@ -1,55 +1,77 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
 import { GetStaticProps } from 'next';
+import { getSortedFilmsData } from '../lib/films';
+import List from '../components/list';
+import Content from '../components/content';
+
+type film = {
+  title: string;
+  director: string;
+  suggestedBy: string[];
+  count: number;
+  image: string;
+};
+
+type films = film[];
+
+type filmGroup = films[];
 
 export default function Home({
-  allPostsData,
+  data,
 }: {
-  allPostsData: {
-    date: string;
-    title: string;
-    id: string;
-  }[];
+  data: {
+    sortedFilms: film[];
+    totalCount: number;
+    totalPosts: number;
+    topTenList: filmGroup;
+  };
 }) {
+  const { totalCount, topTenList, totalPosts } = data;
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <main>
+        <Content>
+          <div className="py-[100px] text-[2.25rem]">
+            <h2 className="text-[3.75rem] mb-[.5em]">Criterion Top Ten</h2>
+            <div className="max-w-[1200px]">
+              <p className="mb-[1em]">
+                This site is the analysis of the top ten films from{' '}
+                <a
+                  href="https://www.criterion.com/current/top-10-lists"
+                  target="_blank"
+                  rel="noreferrer nofollow"
+                >
+                  The Criterion Collection's Top Ten Lists
+                </a>
+                , a verticle of their website that lists the top ten films from
+                guest interviewers that work in or adjecent to the film
+                industry.
+              </p>
+              <p>
+                The data pulls from {totalPosts} posts and features {totalCount}{' '}
+                films in total.
+              </p>
+            </div>
+          </div>
+        </Content>
+        <List items={topTenList} />
+      </main>
     </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
+  const allFilmsData = getSortedFilmsData();
+
   return {
     props: {
-      allPostsData,
+      data: allFilmsData,
     },
   };
 };
