@@ -8,7 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
-    "next"
+    "plugin:@next/next/recommended"
   ],
   "rules": {
     "react/prop-types": 0,
