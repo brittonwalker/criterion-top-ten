@@ -21,14 +21,14 @@ const List = ({ items }: { items: filmGroup }) => {
         {items.map((group, groupID) => {
           return (
             <li key={groupID} className="mb-8 border-t-2 pt-8">
-              <div className="grid grid-cols-12 gap-4">
+              <div className="grid lg:grid-cols-12 gap-4">
                 <div className="col-span-4 flex flex-col relative">
-                  <div className="sticky top-4">
+                  <div className="lg:sticky top-4">
                     <h3 className="text-[48px] leading-[64px] mb-[.5em]">
                       {addLeadingZero(groupID + 1)}{' '}
                       {group.length > 1 && '(tie)'}
                     </h3>
-                    <div className="mb-8">
+                    <div className="mb-8 hidden lg:block">
                       {group.map((film, filmID) => {
                         return (
                           <div key={filmID} className="text-[1.75rem]">
@@ -43,7 +43,7 @@ const List = ({ items }: { items: filmGroup }) => {
                   </div>
                 </div>
                 <div className="col-span-8">
-                  <div className={`grid grid-cols-3 gap-x-4 gap-y-8`}>
+                  <div className={`grid lg:grid-cols-3 gap-x-4 gap-y-8`}>
                     {group.map((film, filmID) => {
                       return (
                         <div key={filmID}>
