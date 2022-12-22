@@ -22,18 +22,21 @@ const List = ({ items }: { items: filmGroup }) => {
           return (
             <li key={groupID} className="mb-8 border-t-2 pt-8">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-4 flex flex-col">
-                  <h3 className="text-[48px] leading-[64px] mb-[.5em]">
-                    {addLeadingZero(groupID + 1)} {group.length > 1 && '(tie)'}
-                  </h3>
-                  <div className="mb-8">
-                    {group.map((film, filmID) => {
-                      return (
-                        <div key={filmID} className="text-[1.75rem]">
-                          <h4>{film.title}</h4>
-                        </div>
-                      );
-                    })}
+                <div className="col-span-4 flex flex-col relative">
+                  <div className="sticky top-0">
+                    <h3 className="text-[48px] leading-[64px] mb-[.5em]">
+                      {addLeadingZero(groupID + 1)}{' '}
+                      {group.length > 1 && '(tie)'}
+                    </h3>
+                    <div className="mb-8">
+                      {group.map((film, filmID) => {
+                        return (
+                          <div key={filmID} className="text-[1.75rem]">
+                            <h4>{film.title}</h4>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                   <div className="mt-auto">
                     <p>Mentioned {group[0].count} times.</p>
