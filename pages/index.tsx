@@ -1,11 +1,10 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { GetStaticProps } from 'next';
-import { getSortedFilmsData } from '../lib/films';
-import List from '../components/list';
-import Content from '../components/content';
-import { GrGithub } from 'react-icons/gr';
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
+import { GetStaticProps } from "next";
+import { getSortedFilmsData } from "../lib/films";
+import List from "../components/list";
+import Content from "../components/content";
+import { GrGithub } from "react-icons/gr";
 
 type film = {
   title: string;
@@ -42,20 +41,20 @@ export default function Home({
             <h2 className="text-[3.75rem] mb-[.5em]">Criterion Top Ten</h2>
             <div className="max-w-[1200px]">
               <p className="mb-[1em]">
-                This site is the analysis of the top ten films from{' '}
+                This site is the analysis of the top ten films from{" "}
                 <a
                   href="https://www.criterion.com/current/top-10-lists"
                   target="_blank"
                   rel="noreferrer nofollow"
                 >
-                  The Criterion Collection's Top Ten Lists
+                  The Criterion Collection&apos;s Top Ten Lists
                 </a>
                 , a verticle of their website that lists the top ten films from
-                guest interviewers that work in or adjecent to the film
-                industry. More features coming soon (wink emoji).
+                guests that work in or adjecent to the film industry. More
+                features coming soon (wink emoji).
               </p>
               <p>
-                The data pulls from {totalPosts} posts and features {totalCount}{' '}
+                The data pulls from {totalPosts} posts and features {totalCount}{" "}
                 films in total.
               </p>
             </div>
