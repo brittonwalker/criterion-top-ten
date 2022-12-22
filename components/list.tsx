@@ -1,4 +1,4 @@
-import Content from './content';
+import Content from "./content";
 
 type film = {
   title: string;
@@ -25,8 +25,8 @@ const List = ({ items }: { items: filmGroup }) => {
                 <div className="col-span-4 flex flex-col relative">
                   <div className="lg:sticky top-4">
                     <h3 className="text-[48px] leading-[64px] mb-[.5em]">
-                      {addLeadingZero(groupID + 1)}{' '}
-                      {group.length > 1 && '(tie)'}
+                      {addLeadingZero(groupID + 1)}{" "}
+                      {group.length > 1 && "(tie)"}
                     </h3>
                     <div className="mb-8 hidden lg:block">
                       {group.map((film, filmID) => {
@@ -47,7 +47,11 @@ const List = ({ items }: { items: filmGroup }) => {
                     {group.map((film, filmID) => {
                       return (
                         <div key={filmID}>
-                          <img src={film.image} className="w-full mb-2" />
+                          <img
+                            src={film.image}
+                            className="w-full mb-2"
+                            alt={`Criterion cover art for ${film.title}`}
+                          />
                           <h4 className="text-[1.75rem]">{film.title}</h4>
                           <p className="text-gray-600">
                             Directed by: {film.director}
