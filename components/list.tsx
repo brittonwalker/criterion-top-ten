@@ -23,7 +23,7 @@ const List = ({ items }: { items: filmGroup }) => {
             <li key={groupID} className="mb-8 border-t-2 pt-8">
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-4 flex flex-col relative">
-                  <div className="sticky top-0">
+                  <div className="sticky top-4">
                     <h3 className="text-[48px] leading-[64px] mb-[.5em]">
                       {addLeadingZero(groupID + 1)}{' '}
                       {group.length > 1 && '(tie)'}
