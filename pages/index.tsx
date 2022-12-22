@@ -51,7 +51,7 @@ export default function Home({
                 </a>
                 , a verticle of their website that lists the top ten films from
                 guest interviewers that work in or adjecent to the film
-                industry.
+                industry. More features coming soon (wink emoji).
               </p>
               <p>
                 The data pulls from {totalPosts} posts and features {totalCount}{' '}
