@@ -1,10 +1,10 @@
-module.exports = () => {
+export default () => {
   const rewrites = () => {
     return [
       {
-        source: '/films',
+        source: "/films",
         destination:
-          'https://www.criterion.com/current/category/8-top-10-lists',
+          "https://www.criterion.com/current/category/8-top-10-lists",
       },
     ];
   };
