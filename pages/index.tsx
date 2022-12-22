@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import { getSortedFilmsData } from '../lib/films';
 import List from '../components/list';
 import Content from '../components/content';
+import { GrGithub } from 'react-icons/gr';
 
 type film = {
   title: string;
@@ -62,6 +63,23 @@ export default function Home({
         </Content>
         <List items={topTenList} />
       </main>
+      <footer className="py-8">
+        <Content>
+          <div className="flex justify-end items-center gap-4">
+            <p>Created by: Britton Walker</p>
+            <div className="text-[32px]">
+              <a
+                href="https://github.com/brittonwalker/criterion-top-ten"
+                target="_blank"
+                rel="noreferrer nofollow"
+                className="text-black"
+              >
+                <GrGithub />
+              </a>
+            </div>
+          </div>
+        </Content>
+      </footer>
     </Layout>
   );
 }
