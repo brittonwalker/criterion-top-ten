@@ -10,5 +10,8 @@ module.exports = () => {
   };
   return {
     rewrites,
+    images: {
+      domains: ["s3.amazonaws.com"],
+    },
   };
 };
