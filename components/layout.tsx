@@ -1,9 +1,8 @@
-import Head from 'next/head';
-import styles from './layout.module.css';
-import Link from 'next/link';
+import Head from "next/head";
+import styles from "./layout.module.css";
+import Link from "next/link";
 
-const name = '[Your Name]';
-export const siteTitle = 'Criterion Top Ten';
+export const siteTitle = "Criterion Top Ten";
 
 export default function Layout({
   children,
