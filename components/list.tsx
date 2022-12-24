@@ -1,6 +1,7 @@
 import Content from "./content";
 import Image from "next/image";
 import addLeadingZero from "../utils";
+import StreamLink from "./streamLink";
 
 type film = {
   title: string;
@@ -8,6 +9,12 @@ type film = {
   suggestedBy: string[];
   count: number;
   image: string;
+  meta: {
+    country: string;
+    releaseDate: string;
+    language: string;
+    streamingLink: string;
+  };
 };
 
 type filmGroup = film[][];
@@ -58,6 +65,9 @@ const List = ({ items }: { items: filmGroup }) => {
                           <div className="text-gray-600">
                             Directed by: {film.director}
                           </div>
+                          {film.meta.streamingLink && (
+                            <StreamLink url={film.meta.streamingLink} />
+                          )}
                         </div>
                       );
                     })}

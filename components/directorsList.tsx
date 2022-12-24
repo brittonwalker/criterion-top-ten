@@ -1,6 +1,7 @@
 import Content from "./content";
 import Image from "next/image";
 import addLeadingZero from "../utils";
+import StreamLink from "./streamLink";
 
 interface DirectorsListProps {
   data: {
@@ -11,6 +12,12 @@ interface DirectorsListProps {
       count: number;
       image: string;
       suggestedBy: string[];
+      meta: {
+        country: string;
+        releaseDate: string;
+        language: string;
+        streamingLink: string;
+      };
     }[];
   }[];
 }
@@ -48,6 +55,9 @@ const DirectorsList = (props: DirectorsListProps) => {
                             className="w-full mb-2"
                           />
                           <div className="heading-3">{film.title}</div>
+                          {film.meta.streamingLink && (
+                            <StreamLink url={film.meta.streamingLink} />
+                          )}
                         </div>
                       );
                     })}

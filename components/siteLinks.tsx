@@ -36,6 +36,28 @@ const SiteLinks = ({
         >
           Directors
         </button>
+        <button
+          className={`button ${
+            activeLink === "countries"
+              ? linkClasses.active
+              : linkClasses.default
+          }`}
+          onClick={() => setSiteLink("countries")}
+          value="countries"
+        >
+          Countries
+        </button>
+        <button
+          className={`button ${
+            activeLink === "languages"
+              ? linkClasses.active
+              : linkClasses.default
+          }`}
+          onClick={() => setSiteLink("languages")}
+          value="languages"
+        >
+          Languages
+        </button>
       </div>
     </Content>
   );
