@@ -23,6 +23,9 @@ const createFilmList = async () => {
         count: 1,
         suggestedBy: [data[i].title.replace(`’s Top 10`, "")],
         image: $("img", el).attr("src"),
+        productPage: $(".editorial-film-listitem__thumbnail-img > a", el).attr(
+          "href"
+        ),
       };
 
       if (filmList.some((f) => f.title === film.title)) {
