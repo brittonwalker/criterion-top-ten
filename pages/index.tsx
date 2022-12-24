@@ -9,7 +9,7 @@ export default function Home({
   data,
 }: {
   data: {
-    totalCount: number;
+    totalFilms: number;
     totalPosts: number;
     totalDirectors: number;
   };

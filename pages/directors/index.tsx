@@ -9,7 +9,7 @@ export default function Directors({
   data,
 }: {
   data: {
-    totalCount: number;
+    totalFilms: number;
     totalPosts: number;
     totalDirectors: number;
   };
