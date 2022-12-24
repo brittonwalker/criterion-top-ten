@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start",
     "createFilmList": "node ./scripts/createFilmList.js",
+    "createDirectorList": "node ./scripts/createDirectorList.js",
     "lint": "eslint \"./**/*.{ts,tsx,js,jsx}\" --quiet"
   },
   "dependencies": {
