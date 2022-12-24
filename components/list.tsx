@@ -25,18 +25,18 @@ const List = ({ items }: { items: filmGroup }) => {
               <div className="grid md:grid-cols-12 gap-8">
                 <div className="col-span-4 flex flex-col relative">
                   <div className="md:sticky top-4">
-                    <h3 className="text-[48px] leading-[64px] mb-[.5em]">
+                    <div className="text-[48px] leading-[64px] mb-[.5em]">
                       {addLeadingZero(groupID + 1)}{" "}
                       {group.length > 1 && "(tie)"}
-                    </h3>
-                    <div className="mb-8 hidden md:block">
+                    </div>
+                    <div className="mb-8 hidden md:flex flex-col gap-y-1">
                       {group.map((film, filmID) => {
                         return (
                           <div
                             key={filmID}
                             className="text-[1.5rem] leading-[1.875rem]"
                           >
-                            <h4>{film.title}</h4>
+                            <div>{film.title}</div>
                           </div>
                         );
                       })}
@@ -60,12 +60,12 @@ const List = ({ items }: { items: filmGroup }) => {
                             alt={`Criterion cover art for ${film.title}`}
                             className="w-full mb-2"
                           />
-                          <h4 className="text-[1.5rem] leading-[1.875rem]">
+                          <div className="text-[1.5rem] leading-[1.875rem]">
                             {film.title}
-                          </h4>
-                          <p className="text-gray-600">
+                          </div>
+                          <div className="text-gray-600">
                             Directed by: {film.director}
-                          </p>
+                          </div>
                         </div>
                       );
                     })}
