@@ -13,6 +13,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer nofollow"
               className="text-black"
+              aria-label="Github project link"
             >
               <GrGithub />
             </a>
