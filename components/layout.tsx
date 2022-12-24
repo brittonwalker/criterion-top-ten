@@ -3,6 +3,7 @@ import styles from "./layout.module.css";
 import Link from "next/link";
 import Content from "./content";
 import { GrGithub } from "react-icons/gr";
+import SiteLinks from "./siteLinks";
 
 export const siteTitle = "Criterion Top Ten";
 
@@ -40,7 +41,7 @@ export default function Layout({
       </Head>
       <header>
         <Content>
-          <div className="pt-8 pb-[100px] text-[2.25rem] leading-[3.15rem]">
+          <div className="pt-8 text-[2.25rem] leading-[3rem]">
             <h2 className="text-[3.75rem] leading-[4.375rem] mb-[.5em]">
               Criterion Top Ten
             </h2>
@@ -55,13 +56,15 @@ export default function Layout({
                   The Criterion Collection&apos;s Top Ten Lists
                 </a>
                 , a verticle of their website that lists the top ten films from
-                guests that work in or adjecent to the film industry. More
-                features coming soon (wink emoji).
+                guests that work in or adjecent to the film industry.
               </p>
-              <p>
+              <p className="mb-[1em]">
                 The data pulls from {totalPosts} posts featuring {totalFilms}{" "}
                 films and {totalDirectors} directors.
               </p>
+              <div className="mb-8">
+                <SiteLinks />
+              </div>
             </div>
           </div>
         </Content>
