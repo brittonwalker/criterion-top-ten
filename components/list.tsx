@@ -1,5 +1,6 @@
 import Content from "./content";
 import Image from "next/image";
+import addLeadingZero from "../utils";
 
 type film = {
   title: string;
@@ -12,10 +13,6 @@ type film = {
 type filmGroup = film[][];
 
 const List = ({ items }: { items: filmGroup }) => {
-  const addLeadingZero = (num: number) => {
-    return num < 10 ? `0${num}` : num;
-  };
-
   return (
     <Content>
       <ol>
