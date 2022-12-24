@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { GetStaticProps } from "next";
 import { getSortedFilmsData } from "../lib/films";
 import List from "../components/list";
 import topTenList from "../data/topTenFilms.json";
+import topTenDirectors from "../data/topTenDirectors.json";
+import DirectorsList from "../components/directorsList";
+import SiteLinks from "../components/siteLinks";
 
 export default function Home({
   data,
@@ -14,13 +18,18 @@ export default function Home({
     totalDirectors: number;
   };
 }) {
+  const [listSelection, setListSelection] = useState("films");
   return (
     <Layout home {...data}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <SiteLinks activeLink={listSelection} setSiteLink={setListSelection} />
       <main>
-        <List items={topTenList} />
+        {listSelection === "films" && <List items={topTenList} />}
+        {listSelection === "directors" && (
+          <DirectorsList data={topTenDirectors} />
+        )}
       </main>
     </Layout>
   );

@@ -36,9 +36,6 @@ const Header = ({
               The data pulls from {totalPosts} posts featuring {totalFilms}{" "}
               films and {totalDirectors} directors.
             </p>
-            <div className="mb-8">
-              <SiteLinks />
-            </div>
           </div>
         </div>
       </Content>
