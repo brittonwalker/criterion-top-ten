@@ -9,8 +9,9 @@ export const siteTitle = "Criterion Top Ten";
 interface LayoutProps {
   children: React.ReactNode;
   home?: boolean;
-  totalCount: number;
+  totalFilms: number;
   totalPosts: number;
+  totalDirectors: number;
 }
 
 export default function Layout({
