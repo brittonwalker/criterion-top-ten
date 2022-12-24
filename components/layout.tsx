@@ -1,9 +1,8 @@
 import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
-import Content from "./content";
-import { GrGithub } from "react-icons/gr";
-import SiteLinks from "./siteLinks";
+import Header from "./header";
+import Footer from "./footer";
 
 export const siteTitle = "Criterion Top Ten";
 
@@ -22,6 +21,11 @@ export default function Layout({
   totalPosts,
   totalDirectors,
 }: LayoutProps) {
+  const headerProps = {
+    totalFilms,
+    totalPosts,
+    totalDirectors,
+  };
   return (
     <div>
       <Head>
@@ -39,54 +43,9 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-        <Content>
-          <div className="pt-8 text-[2.25rem] leading-[3rem]">
-            <h2 className="text-[3.75rem] leading-[4.375rem] mb-[.5em]">
-              Criterion Top Ten
-            </h2>
-            <div className="max-w-[1200px]">
-              <p className="mb-[1em]">
-                This site is the analysis of the top ten films from{" "}
-                <a
-                  href="https://www.criterion.com/current/top-10-lists"
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                >
-                  The Criterion Collection&apos;s Top Ten Lists
-                </a>
-                , a verticle of their website that lists the top ten films from
-                guests that work in or adjecent to the film industry.
-              </p>
-              <p className="mb-[1em]">
-                The data pulls from {totalPosts} posts featuring {totalFilms}{" "}
-                films and {totalDirectors} directors.
-              </p>
-              <div className="mb-8">
-                <SiteLinks />
-              </div>
-            </div>
-          </div>
-        </Content>
-      </header>
+      <Header {...headerProps} />
       <main>{children}</main>
-      <footer className="py-8">
-        <Content>
-          <div className="flex justify-end items-center gap-4">
-            <p>Created by: Britton Walker</p>
-            <div className="text-[32px]">
-              <a
-                href="https://github.com/brittonwalker/criterion-top-ten"
-                target="_blank"
-                rel="noreferrer nofollow"
-                className="text-black"
-              >
-                <GrGithub />
-              </a>
-            </div>
-          </div>
-        </Content>
-      </footer>
+      <Footer />
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
