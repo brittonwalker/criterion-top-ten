@@ -25,14 +25,14 @@ const DirectorsList = (props: DirectorsListProps) => {
         {props.data.map((director, idx) => {
           return (
             <li key={idx} className="mb-8 border-t-2 pt-8">
-              <div className="grid md:grid-cols-12 gap-8">
+              <div className="md:grid md:grid-cols-12 gap-8">
                 <div className="col-span-4 flex flex-col relative">
                   <div className="md:sticky top-4">
-                    <h3 className="text-[48px] leading-[64px] mb-[.5em]">
+                    <h3 className="text-[48px] leading-[64px]">
                       {addLeadingZero(idx + 1)}
                     </h3>
-                    <div className="mb-8 hidden md:block">
-                      <div className="text-[1.5rem] leading-[1.875rem]">
+                    <div className="mb-8">
+                      <div className="text-[48px] leading-[64px]">
                         <h4>{director.name}</h4>
                       </div>
                     </div>
