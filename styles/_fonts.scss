@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Radio Grotesk";
+  src: url("/fonts/radio_grotesk/PPRadioGrotesk-Regular.woff2") format("woff2"),
+    url("/fonts/radio_grotesk/PPRadioGrotesk-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Radio Grotesk";
+  src: url("/fonts/radio_grotesk/PPRadioGrotesk-Bold.woff2") format("woff2"),
+    url("/fonts/radio_grotesk/PPRadioGrotesk-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue_montreal/PPNeueMontreal-Regular.woff2") format("woff2"),
+    url("/fonts/neue_montreal/PPNeueMontreal-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue_montreal/PPNeueMontreal-Bold.woff2") format("woff2"),
+    url("/fonts/neue_montreal/PPNeueMontreal-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
