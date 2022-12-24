@@ -25,11 +25,9 @@ const DirectorsList = (props: DirectorsListProps) => {
               <div className="md:grid md:grid-cols-12 gap-8">
                 <div className="col-span-4 flex flex-col relative">
                   <div className="md:sticky top-4">
-                    <div className="text-[48px] leading-[64px]">
-                      {addLeadingZero(idx + 1)}
-                    </div>
+                    <div className="heading-2">{addLeadingZero(idx + 1)}</div>
                     <div className="mb-8">
-                      <div className="text-[48px] leading-[64px]">
+                      <div className="heading-2">
                         <div>{director.name}</div>
                       </div>
                     </div>
@@ -49,9 +47,7 @@ const DirectorsList = (props: DirectorsListProps) => {
                             alt={`Criterion cover art for ${film.title}`}
                             className="w-full mb-2"
                           />
-                          <div className="text-[1.5rem] leading-[1.875rem]">
-                            {film.title}
-                          </div>
+                          <div className="heading-3">{film.title}</div>
                         </div>
                       );
                     })}

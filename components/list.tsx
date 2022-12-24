@@ -29,10 +29,7 @@ const List = ({ items }: { items: filmGroup }) => {
                     <div className="mb-8 hidden md:flex flex-col gap-y-1">
                       {group.map((film, filmID) => {
                         return (
-                          <div
-                            key={filmID}
-                            className="text-[1.5rem] leading-[1.875rem]"
-                          >
+                          <div key={filmID} className="heading-3">
                             <div>{film.title}</div>
                           </div>
                         );
@@ -57,9 +54,7 @@ const List = ({ items }: { items: filmGroup }) => {
                             alt={`Criterion cover art for ${film.title}`}
                             className="w-full mb-2"
                           />
-                          <div className="text-[1.5rem] leading-[1.875rem]">
-                            {film.title}
-                          </div>
+                          <div className="heading-3">{film.title}</div>
                           <div className="text-gray-600">
                             Directed by: {film.director}
                           </div>

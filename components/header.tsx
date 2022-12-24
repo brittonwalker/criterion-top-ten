@@ -1,5 +1,4 @@
 import Content from "./content";
-import SiteLinks from "./siteLinks";
 
 interface HeaderProps {
   totalFilms: number;
@@ -15,10 +14,8 @@ const Header = ({
   return (
     <header>
       <Content>
-        <div className="pt-8 text-[2.25rem] leading-[3rem]">
-          <h1 className="text-[3.75rem] leading-[4.375rem] mb-[.5em] font-radio tracking-wide">
-            Criterion Top Ten
-          </h1>
+        <div className="pt-8 display-1">
+          <h1 className="heading-1">Criterion Top Ten</h1>
           <div className="max-w-[1200px]">
             <p className="mb-[1em]">
               This site is the analysis of the top ten films from{" "}
