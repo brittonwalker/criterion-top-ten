@@ -6,8 +6,12 @@ import { getSortedFilmsData } from "../lib/films";
 import List from "../components/list";
 import topTenList from "../data/topTenFilms.json";
 import topTenDirectors from "../data/topTenDirectors.json";
+import topTenCountries from "../data/topTenCountries.json";
+import topTenLanguages from "../data/topTenLanguages.json";
 import DirectorsList from "../components/directorsList";
 import SiteLinks from "../components/siteLinks";
+import LanguageList from "../components/languageList";
+import CountryList from "../components/countryList";
 
 export default function Home({
   data,
@@ -16,6 +20,8 @@ export default function Home({
     totalFilms: number;
     totalPosts: number;
     totalDirectors: number;
+    totalLanguages: number;
+    totalCountries: number;
   };
 }) {
   const [listSelection, setListSelection] = useState("films");
@@ -29,6 +35,12 @@ export default function Home({
         {listSelection === "films" && <List items={topTenList} />}
         {listSelection === "directors" && (
           <DirectorsList data={topTenDirectors} />
+        )}
+        {listSelection === "countries" && (
+          <CountryList data={topTenCountries} />
+        )}
+        {listSelection === "languages" && (
+          <LanguageList data={topTenLanguages} />
         )}
       </main>
     </Layout>
