@@ -14,7 +14,7 @@ const Header = ({
   return (
     <header>
       <Content>
-        <div className="pt-8 display-1">
+        <div className="pt-4 lg:pt-8 body-1 lg:display-1">
           <h1 className="heading-1">Criterion Top Ten</h1>
           <div className="max-w-[1200px]">
             <p className="mb-[1em]">

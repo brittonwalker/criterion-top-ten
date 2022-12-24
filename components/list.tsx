@@ -19,10 +19,10 @@ const List = ({ items }: { items: filmGroup }) => {
         {items.map((group, groupID) => {
           return (
             <li key={groupID} className="mb-8 border-t-2 pt-8">
-              <div className="grid md:grid-cols-12 gap-8">
-                <div className="col-span-4 flex flex-col relative">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div className="md:col-span-4 flex flex-col relative">
                   <div className="md:sticky top-4">
-                    <div className="text-[48px] leading-[64px] mb-[.5em]">
+                    <div className="heading-2 mb-[.5em]">
                       {addLeadingZero(groupID + 1)}{" "}
                       {group.length > 1 && "(tie)"}
                     </div>
@@ -40,7 +40,7 @@ const List = ({ items }: { items: filmGroup }) => {
                     <p>Mentioned {group[0].count} times.</p>
                   </div>
                 </div>
-                <div className="col-span-8">
+                <div className="md:col-span-8">
                   <div
                     className={`grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8`}
                   >
