@@ -14,10 +14,8 @@ export default function Home({
     totalDirectors: number;
   };
 }) {
-  const { totalCount, totalPosts } = data;
-
   return (
-    <Layout home totalCount={totalCount} totalPosts={totalPosts}>
+    <Layout home {...data}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
