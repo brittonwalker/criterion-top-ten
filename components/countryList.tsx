@@ -3,26 +3,26 @@ import Image from "next/image";
 import addLeadingZero from "../utils";
 import StreamLink from "./streamLink";
 
-interface CountryListProps {
-  data: {
-    name: string;
-    count: number;
-    films: {
-      title: string;
-      count: number;
-      image: string;
-      suggestedBy: string[];
-      meta: {
-        country: string;
-        releaseDate: string;
-        language: string;
-        streamingLink: string;
-      };
-    }[];
-  }[];
+type Film = {
+  title: string;
+  director: string;
+  count: number;
+  suggestedBy: string[];
+  image: string;
+  productPage?: string;
+  meta?: {
+    releaseDate: string;
+    streamingLink: string;
+    countries: string[];
+    languages: string[];
+  };
+};
+
+interface ListProps {
+  data: { name: string; count: number; films: Film[] }[];
 }
 
-const CountryList = (props: CountryListProps) => {
+const CountryList = (props: ListProps) => {
   return (
     <Content>
       <ol>

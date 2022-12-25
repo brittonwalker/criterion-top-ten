@@ -3,23 +3,26 @@ import Image from "next/image";
 import addLeadingZero from "../utils";
 import StreamLink from "./streamLink";
 
-type film = {
+type Films = {
   title: string;
   director: string;
-  suggestedBy: string[];
   count: number;
+  suggestedBy: string[];
   image: string;
-  meta: {
-    country: string;
+  productPage?: string;
+  meta?: {
     releaseDate: string;
-    language: string;
     streamingLink: string;
+    countries: string[];
+    languages: string[];
   };
 };
 
-type filmGroup = film[][];
+interface ListProps {
+  items: Films[][];
+}
 
-const List = ({ items }: { items: filmGroup }) => {
+const List = ({ items }: ListProps) => {
   return (
     <Content>
       <ol>

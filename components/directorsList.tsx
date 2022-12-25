@@ -3,26 +3,29 @@ import Image from "next/image";
 import addLeadingZero from "../utils";
 import StreamLink from "./streamLink";
 
-interface DirectorsListProps {
-  data: {
-    name: string;
-    count: number;
-    films: {
-      title: string;
-      count: number;
-      image: string;
-      suggestedBy: string[];
-      meta: {
-        country: string;
-        releaseDate: string;
-        language: string;
-        streamingLink: string;
-      };
-    }[];
-  }[];
-}
+type Director = {
+  name: string;
+  count: number;
+  films: Film[];
+};
 
-const DirectorsList = (props: DirectorsListProps) => {
+type Film = {
+  title: string;
+  count: number;
+  suggestedBy: string[];
+  image: string;
+  productPage?: string;
+  meta?: Meta;
+};
+
+type Meta = {
+  country: string;
+  language: string;
+  releaseDate: string;
+  streamingLink: string;
+};
+
+const DirectorsList = (props: { data: Director[] }) => {
   return (
     <Content>
       <ol>

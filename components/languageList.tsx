@@ -3,23 +3,23 @@ import Image from "next/image";
 import addLeadingZero from "../utils";
 import StreamLink from "./streamLink";
 
+type Film = {
+  title: string;
+  director: string;
+  count: number;
+  suggestedBy: string[];
+  image: string;
+  productPage?: string;
+  meta?: {
+    releaseDate: string;
+    streamingLink: string;
+    countries: string[];
+    languages: string[];
+  };
+};
+
 interface LanguageListProps {
-  data: {
-    name: string;
-    count: number;
-    films: {
-      title: string;
-      count: number;
-      image: string;
-      suggestedBy: string[];
-      meta: {
-        country: string;
-        releaseDate: string;
-        language: string;
-        streamingLink: string;
-      };
-    }[];
-  }[];
+  data: { name: string; count: number; films: Film[] }[];
 }
 
 const LanguageList = (props: LanguageListProps) => {
