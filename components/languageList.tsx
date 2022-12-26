@@ -22,11 +22,11 @@ interface LanguageListProps {
   data: { name: string; count: number; films: Film[] }[];
 }
 
-const LanguageList = (props: LanguageListProps) => {
+const LanguageList = ({ data }: LanguageListProps) => {
   return (
     <Content>
       <ol>
-        {props.data.map((director, idx) => {
+        {data.map((director, idx) => {
           return (
             <li key={idx} className="mb-8 border-t-2 pt-8">
               <div className="md:grid md:grid-cols-12 gap-8">

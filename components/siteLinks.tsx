@@ -5,10 +5,7 @@ interface SiteLinksProps {
   setSiteLink: (siteLink: string) => void;
 }
 
-const SiteLinks = ({
-  activeLink,
-  setSiteLink,
-}: SiteLinksProps): JSX.Element => {
+const SiteLinks = ({ activeLink, setSiteLink }: SiteLinksProps) => {
   const linkClasses = {
     active: "bg-black text-white",
     default: "bg-white text-black hover:bg-black hover:text-white",
