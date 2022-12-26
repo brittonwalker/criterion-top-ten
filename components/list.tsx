@@ -25,9 +25,7 @@ interface ListProps {
 const List = ({ items }: ListProps) => {
   return (
     <Content>
-      <p className="body-1 text-gray-600 mb-8">
-        The ten highest ranking films from Criterion&#39;s Top Ten lists.
-      </p>
+      <p className="body-1 text-gray-600 mb-8">The ten most suggested films.</p>
       <ol>
         {items.map((group, groupID) => {
           return (

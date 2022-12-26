@@ -23,14 +23,14 @@ interface ListProps {
 }
 
 const CountryList = (props: ListProps) => {
+  const { data } = props;
   return (
     <Content>
       <p className="body-1 text-gray-600 mb-8">
-        The ten highest ranking countries of origin from Criterion&#39;s Top Ten
-        lists and their top ten films.
+        The top ten countries of origin and their top ten films.
       </p>
       <ol>
-        {props.data.map((director, idx) => {
+        {data.map((director, idx) => {
           return (
             <li key={idx} className="mb-8 border-t-2 pt-8">
               <div className="md:grid md:grid-cols-12 gap-8">
