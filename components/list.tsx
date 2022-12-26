@@ -58,17 +58,24 @@ const List = ({ items }: ListProps) => {
                     {group.map((film, filmID) => {
                       return (
                         <div key={filmID}>
-                          <Image
-                            src={film.image}
-                            width={384}
-                            height={476}
-                            alt={`Criterion cover art for ${film.title}`}
-                            className="w-full mb-2"
-                          />
-                          <div className="heading-3">{film.title}</div>
-                          <div className="text-gray-600">
-                            Directed by: {film.director}
-                          </div>
+                          <a
+                            href={film.productPage}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-black no-underline hover:no-underline"
+                          >
+                            <Image
+                              src={film.image}
+                              width={384}
+                              height={476}
+                              alt={`Criterion cover art for ${film.title}`}
+                              className="w-full mb-2"
+                            />
+                            <div className="heading-3">{film.title}</div>
+                            <div className="text-gray-600">
+                              Directed by: {film.director}
+                            </div>
+                          </a>
                           {film.meta.streamingLink && (
                             <StreamLink url={film.meta.streamingLink} />
                           )}
