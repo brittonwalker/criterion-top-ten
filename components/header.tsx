@@ -14,7 +14,7 @@ const Header = ({
   totalDirectors,
   totalLanguages,
   totalCountries,
-}: HeaderProps): JSX.Element => {
+}: HeaderProps): React.ReactNode => {
   return (
     <header>
       <Content>

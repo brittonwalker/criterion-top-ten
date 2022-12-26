@@ -25,6 +25,10 @@ interface LanguageListProps {
 const LanguageList = ({ data }: LanguageListProps) => {
   return (
     <Content>
+      <p className="body-1 text-gray-600 mb-8">
+        The ten highest languages from Criterion&#39;s Top Ten lists and their
+        top ten films.
+      </p>
       <ol>
         {data.map((director, idx) => {
           return (

@@ -28,6 +28,10 @@ type Meta = {
 const DirectorsList = (props: { data: Director[] }) => {
   return (
     <Content>
+      <p className="body-1 text-gray-600 mb-8">
+        The ten highest ranking directors mentioned from Criterion&#39;s Top Ten
+        lists and the films mentioned.
+      </p>
       <ol>
         {props.data.map((director, idx) => {
           return (
@@ -45,7 +49,7 @@ const DirectorsList = (props: { data: Director[] }) => {
                 </div>
                 <div className="col-span-8">
                   <div
-                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8`}
+                    className={`grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8`}
                   >
                     {director.films.map((film, filmID) => {
                       return (
