@@ -1,26 +1,13 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
+import { Film } from "../types/filmTypes";
 import FilmItem from "./film";
 
-type Director = {
-  name: string;
-  count: number;
-  films: {
-    title: string;
-    count: number;
-    suggestedBy: string[];
-    image: string;
-    productPage?: string;
-    meta?: {
-      countries: string[];
-      languages: string[];
-      releaseDate: string;
-      streamingLink: string;
-    };
-  }[];
-};
+interface DirectorsListProps {
+  data: { name: string; count: number; films: Film[] }[];
+}
 
-const DirectorsList = ({ data }: { data: Director[] }) => {
+const DirectorsList = ({ data }: DirectorsListProps) => {
   return (
     <Content>
       <p className="body-1 text-gray-600 mb-8">
