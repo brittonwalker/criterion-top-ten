@@ -1,28 +1,13 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
 import FilmItem from "./film";
+import { Film } from "../types/filmTypes";
 
-type Film = {
-  title: string;
-  director: string;
-  count: number;
-  suggestedBy: string[];
-  image: string;
-  productPage?: string;
-  meta?: {
-    releaseDate: string;
-    streamingLink: string;
-    countries: string[];
-    languages: string[];
-  };
-};
-
-interface ListProps {
+interface CountryListProps {
   data: { name: string; count: number; films: Film[] }[];
 }
 
-const CountryList = (props: ListProps) => {
-  const { data } = props;
+const CountryList = ({ data }: CountryListProps) => {
   return (
     <Content>
       <p className="body-1 text-gray-600 mb-8">
@@ -30,6 +15,7 @@ const CountryList = (props: ListProps) => {
       </p>
       <ol>
         {data.map((director, idx) => {
+          const { name, count, films } = director;
           return (
             <li key={idx} className="mb-8 border-t-2 pt-8">
               <div className="md:grid md:grid-cols-12 gap-8">
@@ -38,9 +24,9 @@ const CountryList = (props: ListProps) => {
                     <div className="heading-2">{addLeadingZero(idx + 1)}</div>
                     <div className="mb-8">
                       <div className="heading-2">
-                        <div className="mb-2">{director.name}</div>
+                        <div className="mb-2">{name}</div>
                         <div className="text-sm text-gray-500">
-                          {director.count} films mentioned.
+                          {count} films mentioned.
                         </div>
                       </div>
                     </div>
@@ -50,7 +36,7 @@ const CountryList = (props: ListProps) => {
                   <div
                     className={`grid md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8`}
                   >
-                    {director.films
+                    {films
                       .sort((a, b) => b.count - a.count)
                       .slice(0, 10)
                       .map((film, filmID) => {

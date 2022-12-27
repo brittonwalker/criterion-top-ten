@@ -1,28 +1,13 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
 import FilmItem from "./film";
-
-type Film = {
-  title: string;
-  director?: string;
-  count: number;
-  suggestedBy: string[];
-  image: string;
-  productPage?: string;
-  meta?: {
-    releaseDate: string;
-    streamingLink: string;
-    countries: string[];
-    languages: string[];
-  };
-};
+import { Film } from "../types/filmTypes";
 
 interface DirectorsListProps {
   data: { name: string; count: number; films: Film[] }[];
 }
 
 const DirectorsList = ({ data }: DirectorsListProps) => {
-  console.log(data);
   return (
     <Content>
       <p className="body-1 text-gray-600 mb-8">
@@ -30,6 +15,7 @@ const DirectorsList = ({ data }: DirectorsListProps) => {
       </p>
       <ol>
         {data.map((director, idx) => {
+          const { name, films } = director;
           return (
             <li key={idx} className="mb-8 border-t-2 pt-8">
               <div className="md:grid md:grid-cols-12 gap-8">
@@ -38,7 +24,7 @@ const DirectorsList = ({ data }: DirectorsListProps) => {
                     <div className="heading-2">{addLeadingZero(idx + 1)}</div>
                     <div className="mb-8">
                       <div className="heading-2">
-                        <div>{director.name}</div>
+                        <div>{name}</div>
                       </div>
                     </div>
                   </div>
@@ -47,7 +33,7 @@ const DirectorsList = ({ data }: DirectorsListProps) => {
                   <div
                     className={`grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8`}
                   >
-                    {director.films.map((film, filmID) => {
+                    {films.map((film, filmID) => {
                       return (
                         <div key={filmID}>
                           <FilmItem item={film} />
