@@ -1,28 +1,12 @@
 import Content from "./content";
-import Image from "next/image";
 import addLeadingZero from "../utils";
-import StreamLink from "./streamLink";
+import { Film } from "../types/filmTypes";
+import FilmItem from "./film";
 
 type Director = {
   name: string;
   count: number;
   films: Film[];
-};
-
-type Film = {
-  title: string;
-  count: number;
-  suggestedBy: string[];
-  image: string;
-  productPage?: string;
-  meta?: Meta;
-};
-
-type Meta = {
-  country: string;
-  language: string;
-  releaseDate: string;
-  streamingLink: string;
 };
 
 const DirectorsList = (props: { data: Director[] }) => {
@@ -53,24 +37,7 @@ const DirectorsList = (props: { data: Director[] }) => {
                     {director.films.map((film, filmID) => {
                       return (
                         <div key={filmID}>
-                          <a
-                            href={film.productPage}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black no-underline hover:no-underline"
-                          >
-                            <Image
-                              src={film.image}
-                              width={384}
-                              height={476}
-                              alt={`Criterion cover art for ${film.title}`}
-                              className="w-full mb-2"
-                            />
-                            <div className="heading-3">{film.title}</div>
-                          </a>
-                          {film.meta.streamingLink && (
-                            <StreamLink url={film.meta.streamingLink} />
-                          )}
+                          <FilmItem item={film} />
                         </div>
                       );
                     })}

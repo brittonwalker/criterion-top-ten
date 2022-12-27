@@ -56,7 +56,7 @@ const CountryList = (props: ListProps) => {
                       .map((film, filmID) => {
                         return (
                           <div key={filmID}>
-                            <FilmItem film={film} />
+                            <FilmItem item={film} />
                           </div>
                         );
                       })}
