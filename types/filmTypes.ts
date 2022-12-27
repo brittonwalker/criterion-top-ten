@@ -1,6 +1,7 @@
 export type Film = {
   title: string;
   count: number;
+  director?: string;
   suggestedBy: string[];
   image: string;
   productPage?: string;
