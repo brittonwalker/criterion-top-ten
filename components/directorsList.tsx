@@ -1,7 +1,21 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
 import FilmItem from "./film";
-import { Film } from "../types/filmTypes";
+
+type Film = {
+  title: string;
+  director?: string;
+  count: number;
+  suggestedBy: string[];
+  image: string;
+  productPage?: string;
+  meta?: {
+    releaseDate: string;
+    streamingLink: string;
+    countries: string[];
+    languages: string[];
+  };
+};
 
 interface DirectorsListProps {
   data: { name: string; count: number; films: Film[] }[];
