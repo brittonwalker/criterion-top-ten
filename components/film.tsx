@@ -1,6 +1,5 @@
 import Image from "next/image";
 import StreamLink from "./streamLink";
-import { Film } from "../types/filmTypes";
 
 const FilmItem = ({ item }: { item: Film }) => {
   return (
