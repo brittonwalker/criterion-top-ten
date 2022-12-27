@@ -1,12 +1,23 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
-import { Film } from "../types/filmTypes";
 import FilmItem from "./film";
 
 type Director = {
   name: string;
   count: number;
-  films: Film[];
+  films: {
+    title: string;
+    count: number;
+    suggestedBy: string[];
+    image: string;
+    productPage?: string;
+    meta?: {
+      countries: string[];
+      languages: string[];
+      releaseDate: string;
+      streamingLink: string;
+    };
+  }[];
 };
 
 const DirectorsList = (props: { data: Director[] }) => {
