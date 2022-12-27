@@ -12,7 +12,7 @@ const SiteLinks = ({ activeLink, setSiteLink }: SiteLinksProps) => {
   };
   return (
     <Content>
-      <div className="flex gap-4 mb-8">
+      <div className="flex gap-4 mb-8 flex-wrap">
         <button
           className={`button ${
             activeLink === "films" ? linkClasses.active : linkClasses.default
