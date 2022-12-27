@@ -20,14 +20,14 @@ type Director = {
   }[];
 };
 
-const DirectorsList = (props: { data: Director[] }) => {
+const DirectorsList = ({ data }: { data: Director[] }) => {
   return (
     <Content>
       <p className="body-1 text-gray-600 mb-8">
         The top ten directors mentioned and their films on the list.
       </p>
       <ol>
-        {props.data.map((director, idx) => {
+        {data.map((director, idx) => {
           return (
             <li key={idx} className="mb-8 border-t-2 pt-8">
               <div className="md:grid md:grid-cols-12 gap-8">
