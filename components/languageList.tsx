@@ -1,6 +1,5 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
-import { Film } from "../types/filmTypes";
 import FilmItem from "./film";
 
 interface LanguageListProps {

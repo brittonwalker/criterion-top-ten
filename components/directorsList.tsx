@@ -1,7 +1,6 @@
 import Content from "./content";
 import addLeadingZero from "../utils";
 import FilmItem from "./film";
-import { Film } from "../types/filmTypes";
 
 interface DirectorsListProps {
   data: { name: string; count: number; films: Film[] }[];

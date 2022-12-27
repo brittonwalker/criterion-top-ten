@@ -1,4 +1,4 @@
-export type Film = {
+type Film = {
   title: string;
   count: number;
   director?: string;
