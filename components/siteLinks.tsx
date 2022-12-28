@@ -44,17 +44,6 @@ const SiteLinks = ({ activeLink, setSiteLink }: SiteLinksProps) => {
         >
           Countries
         </button>
-        <button
-          className={`button ${
-            activeLink === "languages"
-              ? linkClasses.active
-              : linkClasses.default
-          }`}
-          onClick={() => setSiteLink("languages")}
-          value="languages"
-        >
-          Languages
-        </button>
       </div>
     </Content>
   );

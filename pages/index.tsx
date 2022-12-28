@@ -7,10 +7,8 @@ import List from "../components/list";
 import topTenList from "../data/topTenFilms.json";
 import topTenDirectors from "../data/topTenDirectors.json";
 import topTenCountries from "../data/topTenCountries.json";
-import topTenLanguages from "../data/topTenLanguages.json";
 import DirectorsList from "../components/directorsList";
 import SiteLinks from "../components/siteLinks";
-import LanguageList from "../components/languageList";
 import CountryList from "../components/countryList";
 
 export default function Home({
@@ -38,9 +36,6 @@ export default function Home({
         )}
         {listSelection === "countries" && (
           <CountryList data={topTenCountries} />
-        )}
-        {listSelection === "languages" && (
-          <LanguageList data={topTenLanguages} />
         )}
       </main>
     </Layout>
