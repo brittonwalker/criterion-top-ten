@@ -12,7 +12,6 @@ interface LayoutProps {
   totalFilms: number;
   totalPosts: number;
   totalDirectors: number;
-  totalLanguages: number;
   totalCountries: number;
 }
 
@@ -22,14 +21,12 @@ export default function Layout({
   totalFilms,
   totalPosts,
   totalDirectors,
-  totalLanguages,
   totalCountries,
 }: LayoutProps) {
   const headerProps = {
     totalFilms,
     totalPosts,
     totalDirectors,
-    totalLanguages,
     totalCountries,
   };
   return (

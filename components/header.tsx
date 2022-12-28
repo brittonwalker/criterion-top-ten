@@ -4,7 +4,6 @@ interface HeaderProps {
   totalFilms: number;
   totalPosts: number;
   totalDirectors: number;
-  totalLanguages: number;
   totalCountries: number;
 }
 
@@ -12,7 +11,6 @@ const Header = ({
   totalFilms,
   totalPosts,
   totalDirectors,
-  totalLanguages,
   totalCountries,
 }: HeaderProps) => {
   return (
@@ -35,8 +33,8 @@ const Header = ({
             </p>
             <p className="mb-[1em]">
               The data pulls from {totalPosts} posts featuring {totalFilms}{" "}
-              films, {totalDirectors} directors, in {totalLanguages} languages,
-              from {totalCountries} countries.
+              films, {totalDirectors} directors, from {totalCountries}{" "}
+              countries.
             </p>
           </div>
         </div>
