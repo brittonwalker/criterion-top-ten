@@ -39,7 +39,10 @@ countries.map((country) => {
 });
 
 // get the top 10 countries by number of films
-const top10Countries = countries.sort((a, b) => b.count - a.count).slice(0, 10);
+const top10Countries = countries
+  .filter((country) => country.name !== "")
+  .sort((a, b) => b.count - a.count)
+  .slice(0, 10);
 
 fs.writeFile("./data/countries.json", JSON.stringify(countries), (err) => {
   if (err) {
