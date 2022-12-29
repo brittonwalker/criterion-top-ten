@@ -44,6 +44,9 @@ const SiteLinks = ({ activeLink, setSiteLink }: SiteLinksProps) => {
         >
           Countries
         </button>
+        <a href="/films" className={`button ${linkClasses.default}`}>
+          See all films
+        </a>
       </div>
     </Content>
   );
