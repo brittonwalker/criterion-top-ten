@@ -18,7 +18,6 @@ export default function Home({
     totalFilms: number;
     totalPosts: number;
     totalDirectors: number;
-    totalLanguages: number;
     totalCountries: number;
   };
 }) {
