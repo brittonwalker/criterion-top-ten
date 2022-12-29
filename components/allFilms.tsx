@@ -113,11 +113,14 @@ const AllFilms = ({ films }: { films: Film[] }) => {
           <div className="flex items-center ml-4">
             <input
               type="checkbox"
+              id="streamingOnly"
               onChange={(value) => {
                 setStreamingOnly(value.target.checked);
               }}
             />
-            <label className="ml-2">Streaming only</label>
+            <label className="ml-2" htmlFor="streamingOnly">
+              Streaming only
+            </label>
           </div>
         </div>
         <p className="mr-auto mb-4">
