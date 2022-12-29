@@ -1,7 +1,15 @@
 import Image from "next/image";
 import StreamLink from "./streamLink";
 
-const FilmItem = ({ item }: { item: Film }) => {
+const FilmItem = ({
+  item,
+  includeCount,
+  includeDirector,
+}: {
+  item: Film;
+  includeCount?: boolean;
+  includeDirector?: boolean;
+}) => {
   return (
     <div>
       <a
@@ -18,10 +26,14 @@ const FilmItem = ({ item }: { item: Film }) => {
           className="w-full mb-2"
         />
         <div className="heading-3">{item.title}</div>
+        {includeDirector && (
+          <div className="text-gray-600">Director: {item.director}</div>
+        )}
       </a>
       {item?.meta?.streamingLink && (
         <StreamLink url={item.meta.streamingLink} />
       )}
+      {includeCount && <div>Mentioned {item.count} times.</div>}
     </div>
   );
 };
