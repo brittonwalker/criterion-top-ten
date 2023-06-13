@@ -34,7 +34,7 @@ const Header = ({
             <p className="mb-[1em]">
               The data pulls from {totalPosts} posts featuring {totalFilms}{" "}
               films, {totalDirectors} directors, from {totalCountries}{" "}
-              countries.
+              countries!
             </p>
           </div>
         </div>
